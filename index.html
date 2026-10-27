@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Dream Cart — Everyday finds, thoughtfully chosen</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Free shipping on orders over ₹1,499 <span>•</span> Thoughtful finds, delivered to your door</div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Dream Cart home"><span class="brand-mark">d.</span><span>dream<span class="brand-light">cart</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#shop">Shop all</a>
+      <a href="#shop" data-category-link="Tech">Tech</a>
+      <a href="#shop" data-category-link="Home">Home</a>
+      <a href="#shop" data-category-link="Style">Style</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-box" for="searchInput"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search products..." autocomplete="off"></label>
+      <button class="cart-button" id="cartJump" aria-label="Go to shopping bag">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE EVERYDAY EDIT · VOL. 01</p>
+        <h1>Good things.<br><em>Better everyday.</em></h1>
+        <p class="hero-description">Useful, beautiful finds for your desk, your space and everywhere in between.</p>
+        <a class="button button-dark" href="#shop">Explore the collection <span>↗</span></a>
+        <div class="hero-note"><span class="note-dot"></span> Curated essentials, made for real life</div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85" alt="Warm, thoughtfully styled home interior with neutral decor">
+        <div class="hero-sticker"><span>DC</span><small>THE GOOD<br>STUFF</small></div>
+        <div class="hero-caption"><span>01 / 04</span><span>Objects with purpose</span></div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Shopping benefits">
+      <div><span class="benefit-icon">↗</span><span><strong>Free shipping</strong><small>On orders over ₹1,499</small></span></div>
+      <div><span class="benefit-icon">◇</span><span><strong>Curated quality</strong><small>Useful things, chosen well</small></span></div>
+      <div><span class="benefit-icon">↺</span><span><strong>Easy returns</strong><small>7-day return window</small></span></div>
+      <div><span class="benefit-icon">♡</span><span><strong>Made for you</strong><small>Everyday favourites</small></span></div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Find your next favourite.</h2></div>
+        <p class="section-intro">A considered mix of tech, home comforts and daily carry essentials.</p>
+      </div>
+
+      <div class="shop-layout">
+        <aside class="filters">
+          <div class="filter-heading"><h3>Refine by</h3><button id="clearFilters" class="text-button">Reset</button></div>
+          <div class="filter-group"><h4>Category</h4>
+            <label class="filter-option"><input type="radio" name="category" value="All" checked> All products <span id="allCount"></span></label>
+            <label class="filter-option"><input type="radio" name="category" value="Tech"> Tech</label>
+            <label class="filter-option"><input type="radio" name="category" value="Home"> Home</label>
+            <label class="filter-option"><input type="radio" name="category" value="Style"> Style</label>
+            <label class="filter-option"><input type="radio" name="category" value="Carry"> Bags & carry</label>
+          </div>
+          <div class="filter-group"><h4>Maximum price</h4><div class="price-value">₹<span id="priceValue">40,000</span></div><input id="priceRange" class="price-range" type="range" min="500" max="40000" step="500" value="40000"><div class="range-labels"><span>₹500</span><span>₹40,000</span></div></div>
+          <div class="filter-note"><span>✳</span><p>Good design should make everyday life feel a little better.</p></div>
+        </aside>
+
+        <div class="product-area">
+          <div class="products-toolbar"><p><strong id="resultsCount">8</strong> considered essentials</p><label class="sort-label">Sort by <select id="sortSelect"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option></select></label></div>
+          <div id="productGrid" class="product-grid" aria-live="polite"></div>
+          <p id="emptyState" class="empty-state" hidden>No products match those filters. Try resetting your selection.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial">
+      <div class="editorial-image"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1100&q=85" alt="Laptop and neatly arranged workspace on a wooden desk"></div>
+      <div class="editorial-copy"><p class="eyebrow">A LITTLE LESS CLUTTER</p><h2>Make room for<br><em>what matters.</em></h2><p>From a calmer workspace to the small details that make a room feel like yours, choose pieces that earn their place.</p><a href="#shop" class="underlined-link">Shop the everyday edit <span>→</span></a></div>
+    </section>
+
+    <section class="cart-section" id="bag">
+      <div class="section-heading cart-section-heading"><div><p class="eyebrow">YOUR PICKS</p><h2>Your shopping bag.</h2></div><p class="section-intro">Take a second look. Your next favourite might already be here.</p></div>
+      <div class="cart-layout">
+        <div class="cart-items-panel"><div class="panel-top"><strong>Bag items</strong><button id="clearCart" class="text-button">Remove all</button></div><div id="cartItems"><div class="cart-empty">Your bag is waiting for something good.<br><a href="#shop">Explore the collection →</a></div></div></div>
+        <aside class="order-summary"><h3>Order summary</h3><div class="summary-line"><span>Subtotal</span><span id="subtotal">₹0</span></div><div class="summary-line"><span>Discount</span><span id="discount">−₹0</span></div><div class="summary-line"><span>Shipping</span><span id="shipping">₹0</span></div><div class="coupon-row"><input id="couponInput" type="text" placeholder="Coupon code" aria-label="Coupon code"><button id="applyCoupon" class="button button-outline">Apply</button></div><p id="couponMessage" class="coupon-message" aria-live="polite">Try code <strong>WELCOME10</strong> for 10% off.</p><div class="summary-total"><strong>Total</strong><strong id="total">₹0</strong></div><button id="checkoutButton" class="button button-dark checkout-button">Continue to checkout <span>→</span></button><p class="secure-note">Demo checkout · No payment will be collected</p></aside>
+      </div>
+    </section>
+
+    <section id="checkout" class="checkout-section" hidden>
+      <div class="checkout-card"><div><p class="eyebrow">ALMOST YOURS</p><h2>Complete your order.</h2><p class="section-intro">This is a demo checkout for your mini-project. No real payment is processed.</p></div>
+        <form id="checkoutForm">
+          <div class="form-grid"><label>Full name<input name="name" required placeholder="Your name"></label><label>Email address<input name="email" type="email" required placeholder="you@example.com"></label><label class="full-field">Delivery address<input name="address" required placeholder="House / street / area"></label><label>City<input name="city" required placeholder="City"></label><label>PIN code<input name="pin" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit PIN"></label></div>
+          <label class="payment-label">Demo payment method<select name="payment"><option>Cash on delivery (demo)</option><option>UPI (demo only)</option><option>Card (demo only)</option></select></label>
+          <div class="checkout-bottom"><p>Order total <strong id="checkoutTotal">₹0</strong></p><button class="button button-dark" type="submit">Place demo order <span>→</span></button></div>
+        </form>
+      </div>
+    </section>
+    <section id="successMessage" class="success-message" hidden><div class="success-mark">✓</div><p class="eyebrow">ORDER CONFIRMED</p><h2>Good choice.</h2><p>Your demo order <strong id="orderNumber"></strong> has been placed. No payment was taken.</p><button id="continueShopping" class="button button-dark">Continue shopping →</button></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">d.</span><span>dream<span class="brand-light">cart</span></span></a><p>Thoughtful finds for everyday living.</p><span>© <span id="year"></span> Dream Cart. Student project demo.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
